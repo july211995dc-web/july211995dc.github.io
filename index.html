@@ -10,7 +10,7 @@
         :root {
             --primary-color: #7d6b5c;
             --accent-color: #d4af37; /* Gold */
-            --bg-overlay: rgba(0, 0, 0, 0.45);
+            --bg-overlay: rgba(0, 0, 0, 0.55);
             --text-light: #f9f6f0;
         }
 
@@ -23,14 +23,43 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: var(--text-light);
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-            background-size: cover;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            background-color: #1a1a1a;
+        }
+
+        /* Video Background Wrapper */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        .video-background video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        /* Dark overlay for readability */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--bg-overlay);
+            z-index: -1;
         }
 
         .container {
@@ -43,7 +72,7 @@
             border-radius: 20px;
             padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             margin: 40px 0;
         }
 
@@ -87,6 +116,52 @@
             padding-bottom: 5px;
         }
 
+        /* Attendees Section Styling */
+        .attendees-section {
+            margin-top: 30px;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .attendees-section h3 {
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .attendees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .attendee-group strong {
+            display: block;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .attendee-group ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .attendee-group li {
+            padding: 3px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
@@ -98,7 +173,7 @@
             border-radius: 30px;
             margin-top: 30px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -106,13 +181,14 @@
         .btn:hover {
             background-color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
         }
 
         footer {
             font-size: 0.8rem;
-            opacity: 0.7;
+            opacity: 0.8;
             margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
         @media (max-width: 600px) {
@@ -126,6 +202,15 @@
     </style>
 </head>
 <body>
+
+    <!-- Video Background Container -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="Wedding background.mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="video-overlay"></div>
 
     <!-- Background Music Audio Element with Autoplay -->
     <audio id="bg-music" autoplay loop>
@@ -151,8 +236,50 @@
                 <strong>Bilucao, Malvar City</strong>
             </p>
 
-            <!-- Link for the guest to fill up (Replace # with your actual Google Form or RSVP link) -->
-            <a href="#" target="_blank" class="btn">Fill Up Guest Form / RSVP</a>
+            <!-- List of Attendees / Entourage Format Section -->
+            <div class="attendees-section">
+                <h3>Principal Sponsors & Wedding Entourage</h3>
+                <div class="attendees-grid">
+                    <div class="attendee-group">
+                        <strong>Principal Sponsors</strong>
+                        <ul>
+                            <li>Mr. Alexander Ulep & Mrs. Bella Ulep</li>
+                            <li>Mrs. Epifania V. Conde & Ms. Danica Jhoy V. Conde</li>
+                            <li>Mr. Ading Lat & Mrs. Lucita V. Malabanan</li>
+                            <li>Mr. Bob Greene & Mrs. Alice M. Greene</li>
+                            <li>Mr. & Mrs. Suzzett Mitra</li>
+                            <li>Dr. Joedy Martinez</li>
+                            <li>Dr. JM Martinez</li>
+                            <li>Mrs. Pury Martinez</li>
+                            <li>Mr. & Mrs. Eds Desalia</li>
+                            <li>Mr. & Mrs Lita Layug</li>
+                        </ul>
+                    </div>
+                    <div class="attendee-group">
+                        <strong>Best Man & Maid of Honor</strong>
+                        <ul>
+                            <li>James Mark V. Sabado (Best Man)</li>
+                            <li>Cloe Desalia (Maid of Honor)</li>
+                        </ul>
+                    </div>
+                    <div class="attendee-group">
+                        <strong>Groomsmen & Bridesmaids</strong>
+                        <ul>
+                            <li>Jhon Vincent Tucino</li>
+                            <li>John Rey Saludo</li>
+                            <li>Jogimar Lubi</li>
+                            <li>jomari Lincuna</li>
+                            <li>Faith Vicente</li>
+                            <li>Princess Ambrosio</li>
+                            <li>Jean Manaig</li>
+                            <li>Maedith Valendia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Link for the guest to fill up -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdes8WI3sTiD7msRz_qkUd4h0YrsAfYpQLKfGToupQDmQDQ3Q/viewform?usp=publish-editor" target="_blank" class="btn">Fill Up Guest Form / RSVP</a>
         </div>
     </div>
 
