@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dannie J & Cristy Jane's Wedding</title>
-    <!-- Google Fonts for a romantic typography -->
+    <!-- Google Fonts for romantic typography -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -63,14 +63,14 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
-            padding: 40px 20px;
+            padding: 40px 25px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             margin: 40px 0;
@@ -106,22 +106,22 @@
         }
 
         .section-title {
-            font-size: 1.3rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-top: 25px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            display: inline-block;
-            padding-bottom: 5px;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+            display: block;
+            font-weight: 500;
         }
 
         /* Attendees Section Styling */
         .attendees-section {
-            margin-top: 30px;
+            margin-top: 35px;
             text-align: left;
             background: rgba(0, 0, 0, 0.35);
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
@@ -129,27 +129,29 @@
         .attendees-section h3 {
             text-align: center;
             color: var(--accent-color);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .attendees-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            font-size: 0.95rem;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+            font-size: 0.9rem;
             font-weight: 300;
         }
 
         .attendee-group strong {
             display: block;
             color: var(--accent-color);
-            margin-bottom: 5px;
-            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 4px;
         }
 
         .attendee-group ul {
@@ -158,8 +160,20 @@
         }
 
         .attendee-group li {
-            padding: 3px 0;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding: 4px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+        }
+
+        .music-prompt {
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            cursor: pointer;
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            padding: 6px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .btn {
@@ -206,69 +220,68 @@
     <!-- Video Background Container -->
     <div class="video-background">
         <video autoplay muted loop playsinline>
-            <source src="Wedding background.mp4">
+            <source src="Wedding background.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
     <div class="video-overlay"></div>
 
-    <!-- Background Music Audio Element with Autoplay -->
-    <audio id="bg-music" autoplay loop>
+    <!-- Background Music Audio Element -->
+    <audio id="bg-music" loop>
         <source src="your-wedding-song.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <div class="invite-content">
+            <div id="music-toggle" class="music-prompt">♫ Tap/Click to Play Wedding Music</div>
             <p class="save-the-date">Save The Date</p>
-            <h1>Dannie J <br><span style="font-size: 2.5rem; font-family: 'Montserrat', sans-serif; font-weight: 300;">&</span><br> Cristy Jane</h1>
+            <h1>Dannie J <br><span style="font-size: 2.2rem; font-family: 'Montserrat', sans-serif; font-weight: 300;">&amp;</span><br> Cristy Jane</h1>
             
             <p class="wedding-details">
-                Together with our families, we joyfully invite you to celebrate our wedding day.<br><br>
+                Together with our families, we joyfully invite you to celebrate our wedding day.
                 
-                <span class="section-title">Date & Time</span><br>
-                <strong>October 25, 2027</strong> at <strong>8:00 AM</strong><br><br>
+                <span class="section-title">Date &amp; Time</span>
+                <strong>October 25, 2027</strong> at <strong>8:00 AM</strong>
                 
-                <span class="section-title">Ceremony</span><br>
-                <strong>Malvar Church</strong><br><br>
+                <span class="section-title">Ceremony</span>
+                <strong>Malvar Church</strong>
                 
-                <span class="section-title">Reception</span><br>
+                <span class="section-title">Reception</span>
                 <strong>Bilucao, Malvar City</strong>
             </p>
 
-            <!-- List of Attendees / Entourage Format Section -->
+            <!-- Entourage Section -->
             <div class="attendees-section">
-                <h3>Principal Sponsors & Wedding Entourage</h3>
+                <h3>Principal Sponsors &amp; Wedding Entourage</h3>
                 <div class="attendees-grid">
                     <div class="attendee-group">
                         <strong>Principal Sponsors</strong>
                         <ul>
-                            <li>Mr. Alexander Ulep & Mrs. Bella Ulep</li>
-                            <li>Mrs. Epifania V. Conde & Ms. Danica Jhoy V. Conde</li>
-                            <li>Mr. Ading Lat & Mrs. Lucita V. Malabanan</li>
-                            <li>Mr. Bob Greene & Mrs. Alice M. Greene</li>
-                            <li>Mr. & Mrs. Suzzett Mitra</li>
+                            <li>Mr. Alexander Ulep &amp; Mrs. Bella Ulep</li>
+                            <li>Mrs. Epifania V. Conde &amp; Ms. Danica Jhoy V. Conde</li>
+                            <li>Mr. Ading Lat &amp; Mrs. Lucita V. Malabanan</li>
+                            <li>Mr. Bob Greene &amp; Mrs. Alice M. Greene</li>
+                            <li>Mr. &amp; Mrs. Suzzett Mitra</li>
                             <li>Dr. Joedy Martinez</li>
                             <li>Dr. JM Martinez</li>
                             <li>Mrs. Pury Martinez</li>
-                            <li>Mr. & Mrs. Eds Desalia</li>
-                            <li>Mr. & Mrs Lita Layug</li>
+                            <li>Mr. &amp; Mrs. Eds Desalia</li>
+                            <li>Mr. &amp; Mrs. Lita Layug</li>
                         </ul>
                     </div>
                     <div class="attendee-group">
-                        <strong>Best Man & Maid of Honor</strong>
+                        <strong>Best Man &amp; Maid of Honor</strong>
                         <ul>
-                            <li>James Mark V. Sabado (Best Man)</li>
-                            <li>Cloe Desalia (Maid of Honor)</li>
+                            <li>James Mark V. Sabado <small>(Best Man)</small></li>
+                            <li>Cloe Desalia <small>(Maid of Honor)</small></li>
                         </ul>
-                    </div>
-                    <div class="attendee-group">
-                        <strong>Groomsmen & Bridesmaids</strong>
+                        <strong style="margin-top: 15px;">Groomsmen &amp; Bridesmaids</strong>
                         <ul>
                             <li>Jhon Vincent Tucino</li>
                             <li>John Rey Saludo</li>
                             <li>Jogimar Lubi</li>
-                            <li>jomari Lincuna</li>
+                            <li>Jomari Lincuna</li>
                             <li>Faith Vicente</li>
                             <li>Princess Ambrosio</li>
                             <li>Jean Manaig</li>
@@ -276,30 +289,42 @@
                         </ul>
                     </div>
                     <div class="attendee-group">
-                        <strong>Ring Bearer & Flower Girl</strong>
+                        <strong>Ring Bearer &amp; Flower Girl</strong>
                         <ul>
                             <li>Dylan Henry R. Conde</li>
-                            <li>Maven Ambrocio</li>
+                            <li>Maven Ambrosio</li>
                         </ul>
-                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Link for the guest to fill up -->
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdes8WI3sTiD7msRz_qkUd4h0YrsAfYpQLKfGToupQDmQDQ3Q/viewform?usp=publish-editor" target="_blank" class="btn">Fill Up Guest Form / RSVP</a>
+            <!-- RSVP Link -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdes8WI3sTiD7msRz_qkUd4h0YrsAfYpQLKfGToupQDmQDQ3Q/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" class="btn">Fill Up Guest Form / RSVP</a>
         </div>
     </div>
 
     <footer>
-        &copy; 2027 Dannie J & Cristy Jane Wedding. All Rights Reserved.
+        &copy; 2027 Dannie J &amp; Cristy Jane Wedding. All Rights Reserved.
     </footer>
 
     <script>
-        // Fallback script to start music on the first click/tap anywhere if browser blocks strict autoplay
-        document.addEventListener('click', function() {
-            const audio = document.getElementById('bg-music');
+        const audio = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+
+        function startMusic() {
+            audio.play().then(() => {
+                musicToggle.style.display = 'none';
+            }).catch(error => {
+                console.log("Audio autoplay waiting for interaction");
+            });
+        }
+
+        musicToggle.addEventListener('click', startMusic);
+        document.addEventListener('click', () => {
             if (audio.paused) {
-                audio.play().catch(error => console.log("Playback prevented"));
+                audio.play().then(() => {
+                    musicToggle.style.display = 'none';
+                }).catch(() => {});
             }
         }, { once: true });
     </script>
